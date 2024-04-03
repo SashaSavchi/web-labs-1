@@ -28,7 +28,11 @@ header {
     padding: 5px; 
 }
 
-a {text-decoration: none}
+a {
+    color: green;
+    text-decoration: none;
+    transition: 1s 3s;
+}
 
 a:link {
     color: brown;
@@ -41,7 +45,8 @@ a:visited {
 a:hover {
     color: red;
     text-decoration: underline;
-    background-color: pink
+    background-color: pink;
+    transition: 0.3s;
 }
 
 a:active {
