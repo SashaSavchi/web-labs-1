@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Позиционирование</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        div { 
+            position: relative; 
+            width: 300px; 
+            height: 70px; 
+            line-height: 70px; 
+            text-align: center; 
+            background-color: rgb(255, 255, 255); 
+            border: 1px dashed green; 
+            border-radius: 7px; 
+            margin: 15px; 
+            color: brown; 
+            z-index: 1; 
+        } 
+        .position-relative { 
+            position: relative; 
+            left: 150px; 
+            top: -130px; 
+            z-index: 0; 
+        } 
+        .position-relative:hover { 
+            z-index: 2; 
+        } 
+        .position-absolute { 
+            position: absolute; 
+            left: 300px; 
+            z-index: 3; 
+        } 
+        .position-absolute:hover { 
+            width: 330px; 
+            height: 100px; 
+            line-height: 100px; 
+            color: rgb(235, 49, 108); 
+            background-color: rgb(243, 250, 255); 
+            border: 4px dashed black; 
+            box-shadow: 0 0 15px brown; 
+            transition: 1s; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <header> 
+        НГТУ, ФБ, Лабораторная работа 4 
+    </header> 
+ 
+    <main> 
+        <div>static</div> 
+        <div>static</div> 
+        <div class="position-relative">relative</div> 
+        <div>static</div> 
+        <div>static</div> 
+        <div class="position-absolute">absolute</div> 
+        <div>static</div> 
+        <div>static</div> 
+        <div>static</div> 
+        <div>static</div> 
+    </main> 
+    <footer>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
