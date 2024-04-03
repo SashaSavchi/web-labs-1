@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>        
+        main {
+            text-align: center;
+        }
+        div {
+            border-radius: 50%;
+            position: absolute;
+            background-color: rgb(255, 250, 245);
+            color: rgb(255, 250, 245);
+            box-shadow: 3px 3px 3px rgb(217, 183, 32);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .first {
+            width: 65px;
+            height: 40px;
+            left: 925px;
+            top: 330px;
+            color: black;
+            font-weight: bold;
+            font-family: Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .second {
+            width: 97.5px;
+            height: 60px;
+            left: 970px;
+            top: 360px;
+            color: black;
+            font-weight: bold;
+            font-family: Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .third {
+            width: 146.25px;
+            height: 90px;
+            left: 1030px;
+            top: 405px;
+            color: black;
+            font-weight: bold;
+            font-family: Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fourth {
+            width: 178.75px;
+            height: 110px;
+            left: 1130px;
+            top: 470px;
+            color: black;
+            font-weight: bold;
+            font-family: Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img:hover + .first {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+        img:hover ~ .second {
+            opacity: 1;
+            transition: opacity 1s 0.5s;
+        }
+        img:hover ~ .third {
+            opacity: 1;
+            transition: opacity 1s 1s;
+        }
+        img:hover ~ .fourth {
+            opacity: 1;
+            transition: opacity 1s 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    
+    <main>
+        <img src="stvn universe.jpg" alt="" width="1100px">
+        <div class="first">Мы</div>
+        <div class="second">Самоцветы</div>
+        <div class="third">Мы</div>
+        <div class="fourth">Спасаем мир всегда!</div>
+    </main>
+</body>
+</html>
