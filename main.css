@@ -29,3 +29,22 @@ header {
 }
 
 a {text-decoration: none}
+
+a:link {
+    color: brown;
+}
+
+a:visited {
+    color: blueviolet;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    background-color: pink
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
