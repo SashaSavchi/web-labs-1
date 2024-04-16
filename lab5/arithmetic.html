@@ -25,6 +25,13 @@
         function showHello(){
             alert('Приветствую вас на моей странице!\nРаз, два, три, четыре, пять - \nВышел зайчик погулять') 
         }
+        function changeOutput(buttonNum, backColor, textColor, borderColor) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' - buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = '2px solid ' + borderColor;
+        }
     </script>
 
     <style>
@@ -46,7 +53,11 @@
         footer {
             cursor: pointer;
         }
-
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 
@@ -59,7 +70,17 @@
         <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+        
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'blue')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'pink', 'black', 'green')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'green', 'white', 'red')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'orange', 'blue','white')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showHello()"> 
