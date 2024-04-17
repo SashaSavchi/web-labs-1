@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function showSumma() {
+            let inputA = document.getElementById("productA");
+            let inputB = document.getElementById("productB");
+            let inputC = document.getElementById("productC");
+            let inputD = document.getElementById("productD");
+            let inputE = document.getElementById("productE");
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let e = parseInt(inputE.value);
+            a= isNaN(a) ? 0: a;
+            b= isNaN(b) ? 0: b;
+            c= isNaN(c) ? 0: c;
+            d= isNaN(d) ? 0: d;
+            e= isNaN(e) ? 0: e;
+
+            let result = a * 709 + b * 4400 + c * 125 + d * 750 + e * 1900;
+            
+            let price = document.getElementById("price");
+            
+            price.innerHTML = "Итого: " + result + "₽";
+        }
+        function showClean() {
+            productA.value = "";
+            productB.value = "";
+            productC.value = "";
+            productD.value = "";
+            productE.value = "";
+            price.innerHTML = "";
+        }
+    </script>
+    <style>
+        .basket {
+            margin-top: 5px;
+            background-color: rgba(139, 37, 212, 0.116);
+            border: 2px solid rgb(57, 108, 211);
+            box-shadow: 0 0 13px rgba(157, 204, 255, 0.76);
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            color: rgb(43, 74, 188);
+            font-size: 15px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .product {
+            margin: 5px;
+            padding: 7px;
+            border-radius: 10px;
+            color: rgb(82, 81, 81);
+        }
+        .button {
+            margin: 5px;
+            display: inline-block;
+        }
+        #price {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            margin: auto;
+        }
+        input {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+       <div class="basket">
+            <h1>Корзина товаров</h1>
+
+            <div class="product">
+                <label>
+                    Табурет деревянный оригинальный (осина) <br>(709₽/шт)<br><input type="number" min="0" 
+                    placeholder="Количество в шт" id="productA">
+                </label><br>
+            </div>
+
+            <div class="product">
+                <label>
+                    Дверь деревянная банная Эконом 1800х700 мм (Добрая баня) липа <br>(4 400 руб./шт)<br><input type="number" min="0" 
+                    placeholder="Количество в шт" id="productB">
+                </label><br>
+            </div>
+            
+            <div class="product">  
+                <label>
+                    Рукавица для бани "Волна" <br>(125 руб./шт)<br><input type="number" min="0" 
+                    placeholder="Количество в шт" id="productC">
+                </label><br>
+            </div>
+            
+            <div class="product">
+                <label>
+                    Камни для бани Порфирит (колотый), 20 кг <br>(750 руб./шт)<br><input type="number" min="0" 
+                    placeholder="Количество в шт" id="productD">
+                </label><br>
+            </div>
+
+            <div class="product">
+                <label>
+                    Шайка деревянная двуручная с пластиковой вставкой, 8 л (липа) <br>(1 900 руб./шт)<br><input type="number" min="0" 
+                    placeholder="Количество в шт" id="productE">
+                </label><br>
+            </div>
+
+            <div class="button">
+                <input type="button" value="Рассчитать" onclick="showSumma()">
+            </div>
+            <div id="price"></div>
+            <div class="button">
+                <input type="button" value="Очистить" onclick="showClean()">
+            </div>
+
+
+       </div>
+    </main>
+    <footer> 
+        &copy; Цуканова Александра, ФБИ-21, 2 курс, 2024 
+    </footer> 
+</body>
+</html>
