@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    
+    <script> 
+        function Remove(circle) { 
+            circle.style.opacity = '0'; 
+        } 
+ 
+        function Return() { 
+            document.querySelectorAll('.circle').forEach(function(circle) { 
+                circle.style.opacity = '1'; 
+        }); 
+        } 
+ 
+    </script> 
+    <style> 
+        .circle{ 
+            color: brown;
+            border-radius: 100%; 
+            border: solid 3px; 
+            width: 80px; 
+            height: 80px; 
+            display: inline-block; 
+            text-align: center; 
+            font-size: 50pt; 
+            position: absolute; 
+            cursor: pointer; 
+            transition: 0.5s; 
+            margin: 10px;
+            left: calc(10% + 80% * var(--rand-x));
+            top: calc(10% + 80% * var(--rand-y));
+        
+/* - 10%: Это значение, указывающее смещение элемента относительно верхнего края его родительского контейнера. 
+- 80%: Значение, указывающее коэффициент ширины (или высоты) элемента относительно родительского контейнера.
+В данном случае, элемент будет занимать 80% ширины (или высоты) родительского контейнера.
+- var(--rand-x): Это пользовательская CSS переменная, 
+которая получается из значения --rand-x*/
+        }
+
+    </style> 
+</head> 
+<body> 
+    <header> 
+        НГТУ, ФБ, Лабораторная 5 
+    </header> 
+ 
+    <main> 
+        <div class="circle b1" id="output1" style="background-color: aqua; --rand-x:0.1; --rand-y:0.2;" onclick="Remove(this)">1</div> 
+        <div class="circle b2" id="output2" style="background-color: rgb(53, 225, 231); --rand-x:0.8; --rand-y:0.4;" onclick="Remove(this)">2</div> 
+        <div class="circle b3" id="output3" style="background-color: rgb(105, 74, 228); --rand-x:0.8; --rand-y:0.1;" onclick="Remove(this)">3</div> 
+        <div class="circle b4" id="output4" style="background-color: rgb(156, 152, 255); --rand-x:0.3; --rand-y:0.7;" onclick="Remove(this)">4</div> 
+        <div class="circle b5" id="output5" style="background-color: rgb(105, 60, 255); --rand-x:0.6; --rand-y:0.6;" onclick="Remove(this)">5</div> 
+        <div class="circle b6" id="output6" style="background-color: rgb(207, 250, 250); --rand-x:0.3; --rand-y:0.3;" onclick="Remove(this)">6</div> 
+        <div class="circle b7" id="output7" style="background-color: rgb(47, 163, 198); --rand-x:0.5; --rand-y:0.9;" onclick="Remove(this)">7</div> 
+        <div class="circle b8" id="output8" style="background-color: rgb(39, 153, 153); --rand-x:0.4; --rand-y:0.1;" onclick="Remove(this)">8</div> 
+        <div class="circle b9" id="output9" style="background-color: aqua; --rand-x:0.2; --rand-y:0.5;" onclick="Remove(this)">9</div> 
+        <div class="circle b10" id="output10" style="background-color: rgb(245, 158, 216); --rand-x:0.4; --rand-y:0.5;" onclick="Remove(this)">10</div> 
+        <input type="button" value="Вернуть" onclick="Return()"> 
+        <!-- this (ключ слово) ссылается на текущий элемент, на котором произошло событие (в данном случае, событие клика).-->
+    </main> 
+    <footer ondblclick="showHello()"> 
+        &copy; Цуканова Александра, ФБИ-21, 2 курс, 2024 
+    </footer> 
+</body>
+</html>

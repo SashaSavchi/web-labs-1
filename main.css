@@ -10,6 +10,8 @@ main {
     color: maroon;
     font-family: Arial;
     margin: 30px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 footer {
