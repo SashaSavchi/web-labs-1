@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        select {
+            margin: 5px;
+            font-size: medium;
+            
+        }
+        img {
+            height: 300px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <script>
+        function filter() {
+            let color = document.getElementById("wear-color").value;
+            let type = document.getElementById("wear-type").value;
+            let wear = document.getElementById("wear");
+
+            if (color == 'Красный' && type == 'Свитер') {
+                wear.src = 'red-s.jpg'
+            }
+            else if (color == 'Красный' && type == 'Поло') {
+                wear.src = 'red-p.jpg'
+            }
+            else if (color == 'Красный' && type == 'Майка') {
+                wear.src = 'red-m.jpg'
+            }
+            else if (color == 'Синий' && type == 'Свитер') {
+                wear.src = 'blue-s.jpg'
+            }
+            else if (color == 'Синий' && type == 'Поло') {
+                wear.src = 'blue-p.jpg'
+            }
+            else if (color == 'Синий' && type == 'Майка') {
+                wear.src = 'blue-m.jpg'
+            }
+            else if (color == 'Черный' && type == 'Свитер') {
+                wear.src = 'black-s.jpg'
+            }
+            else if (color == 'Черный' && type == 'Поло') {
+                wear.src = 'black-p.jpg'
+            }
+            else {wear.src = 'black-m.jpg'
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+        <hr>
+    </header>
+
+    <main>
+        <div class="wear">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Синий</option>
+                <option>Черный</option>
+            </select><br>
+            Тип одежды:
+            <select id="wear-type">
+                <option>Свитер</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+    
+            <button onclick="filter()">OK</button>
+    
+            <img id="wear">
+        </div>
+    </main>
+    
+    <footer>
+        <hr>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
