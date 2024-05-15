@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        div {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        
+        .message {
+            padding: 8px;
+            border: 1px solid maroon;
+            background-color:beige;
+            display: none;
+            width: 50%;
+        }
+
+        .balance {
+            font-weight: bold;
+            text-align: center;
+            padding: 7px;
+        }
+
+        button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            font-size: larger;
+        }
+
+        table {
+            width: 51%;
+            border-collapse: collapse;
+            background-color:beige;
+            text-align: center;
+            margin: auto;
+        } 
+
+        td, tr {
+            padding: 7px;
+            border: 1px solid  maroon;
+        }
+    </style>
+    <script>
+        function Result() {
+            
+            let userBalance = document.getElementById('user-balance').value;
+            let totalSum = 0;
+            let errorMessage = '';
+
+            let rows = document.querySelectorAll('table tr');
+            for (let i = 1; i < rows.length; i++) {
+                let quantity = parseInt(rows[i].querySelector('input').value) || 0;  
+                let price = parseInt(rows[i].querySelectorAll('td')[2].innerText);
+    
+                if (quantity < 0) {
+                    errorMessage = 'Ошибка! Количество товара не может быть отрицательным.';
+                    break;
+                }
+    
+                totalSum += quantity * price;
+            }
+
+
+            if (errorMessage !== '') {
+                document.getElementById('message').innerText = errorMessage; 
+            }
+
+            else if (totalSum > userBalance) {
+                document.getElementById('message').innerText = 'Ошибка! Сумма превышает имеющийся баланс.';
+            }
+            else if (totalSum === 0) {
+                    document.getElementById('message').innerText = 'Выберите хотя бы один товар.';
+            }
+            else {
+                    document.getElementById('message').innerText = 'Успешное оформление товара. Итоговая сумма: ' + totalSum + ' р.';
+            }
+
+
+            let screens = document.getElementsByClassName('message');
+            screens[0].style.display = 'block'
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+        <hr>
+    </header>
+
+    <main>
+       <div>
+            <div class="balance">
+                Мой баланс:   
+                <input type="number" value="" min="0" id="user-balance"><br>
+            </div>
+            
+            <div>
+                <table>
+                    <tr style="font-weight: bold">
+                        <td></td>
+                        <td>Название</td>
+                        <td>Цена</td>
+                        <td>Количество</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Молоко</td>
+                        <td>90 р</td>
+                        <td><input type="number" value="" min="0" id="quantity"><br></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Сметана</td>
+                        <td>80 р</td>
+                        <td><input type="number" value="" min="0" id="quantity"><br></td> 
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Йогурт</td>
+                        <td>60 р</td>
+                        <td><input type="number" value="" min="0" id="quantity"><br></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Каша овсянная</td>
+                        <td>100 р</td>
+                        <td><input type="number" value="" min="0" id="quantity"><br></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Печенье</td>
+                        <td>80 р</td>
+                        <td><input type="number" value="" min="0" id="quantity"><br></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Масло, 200 гр</td>
+                        <td>150 р</td>
+                        <td><input type="number" value="" min="0" id="quantity"><br></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Творог</td>
+                        <td>100 р</td>
+                        <td><input type="number" value="" min="0" id="quantity"><br></td>
+                    </tr>
+                </table>
+            </div>
+
+            <button onclick="Result()">OK</button>
+            
+            <div class="message" > <span id='message'></span></div>
+            
+       </div>
+    </main>
+    <footer>
+        <hr>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
