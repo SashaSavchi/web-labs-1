@@ -46,9 +46,11 @@
         function addNewBlocks() {
             let main = document.querySelector('main');
             let j = document.getElementById('i');
-
             let j1 = parseInt(j.value);
-            if (j1 < 0) {
+            if (j1 === 0) {
+                alert("Введите количество блоков");
+            }
+            else if (j1 < 0) {
                 j1 = -j1;
                 alert("Вы ввели отрицательное число. Мы заменили его на положительное для вывода корректного количества блоков.");
             }
@@ -72,9 +74,8 @@
                 newBlock.style.border = '6px double darkgreen';
                 newBlock.style.width = `${i+10}px`;
                 let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-                newBlock.innerHTML = `${i}`;
+                newBlock.innerHTML = i;
                 newBlock.style.backgroundColor = randomColor;
-                newBlock.innerHTML = i; 
                 main.appendChild(newBlock);
             }
         }
@@ -95,13 +96,11 @@
 
         function opacity10(){
             let main = document.querySelector('main');
-            for (let i = 20; i<=50; i+=2.5) {
+            for (let i = 0; i<=100; i+=10) {
                 let newBlock = document.createElement('div')
-                newBlock.style.weight = '40px';
-                newBlock.style.border = '1px solid';
-
-                newBlock.innerHTML = `${i}`;
-
+                newBlock.style.backgroundColor = 'orange'
+                newBlock.style.opacity =  `${i}`+'%';
+                newBlock.innerHTML = i;
                 main.appendChild(newBlock);
             }
         }
@@ -116,13 +115,13 @@
     
     <main>
         <label>
-            Сколько добавить блоков? Введите нужное количество: <input type="number" value="0" min="0" id="i">
+            Сколько добавить блоков? Введите нужное количество: <input style="margin: 10px" type="number" value="0" min="0" id="i">
         </label><br>
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_m80()">10 => -80</button>
-        <button onclick="opacity10()">10 => -80</button>
+        <button onclick="opacity10()">Прозрачные блоки</button>
     </main>
     <footer>
         <hr>
