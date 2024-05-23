@@ -104,6 +104,36 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function colorcircle(){
+            let main = document.querySelector('main');
+            let contentContainer = document.createElement('br');
+        main.appendChild(contentContainer);
+
+            let k = document.getElementById('k');
+            let k1 = parseInt(k.value);
+            if (k1 === 0) {
+                alert("Введите количество кругов");
+            }
+            else if (k1 < 0) {
+                k1 = -k1;
+                alert("Вы ввели отрицательное число. Мы заменили его на положительное для вывода корректного количества кругов.");
+            }
+            
+            for (let i = k1; i>0; i--) {
+                let newCircle = document.createElement('div');
+                newCircle.classList.add('circle');
+                
+                if (i % 2 === 0) {
+                    newCircle.style.backgroundColor = 'green';
+                } else {
+                    newCircle.style.backgroundColor = 'red';
+                    newCircle.style.border = '6px solid maroon'
+                }
+                newCircle.innerHTML = i;
+                main.appendChild(newCircle);
+            }
+        }
     </script>
 </head>
 
@@ -117,11 +147,15 @@
         <label>
             Сколько добавить блоков? Введите нужное количество: <input style="margin: 10px" type="number" value="0" min="0" id="i">
         </label><br>
+        <label>
+            Сколько добавить кругов? Введите нужное количество: <input style="margin: 10px" type="number" value="0" min="0" id="k">
+        </label><br>
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_m80()">10 => -80</button>
         <button onclick="opacity10()">Прозрачные блоки</button>
+        <button onclick="colorcircle()">Цветные круги</button>
     </main>
     <footer>
         <hr>
