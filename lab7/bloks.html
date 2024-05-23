@@ -18,7 +18,7 @@
             box-shadow: 0 0 10px rgb(2, 0, 0);
             padding: 7px;
             width: 400px;
-            color: white;
+            color: rgb(234, 234, 234);
             
         }
     </style>
@@ -57,10 +57,12 @@
             for (let i = 20; i<=50; i+=2.5) {
                 let newBlock = document.createElement('div')
                 newBlock.style.weight = '40px';
-                newBlock.style.border = '1px solid';
-
+                newBlock.style.border = '6px double darkgreen';
+                newBlock.style.width = `${i+10}px`;
+                let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
                 newBlock.innerHTML = `${i}`;
-
+                newBlock.style.backgroundColor = randomColor;
+                newBlock.innerHTML = i; 
                 main.appendChild(newBlock);
             }
         }
