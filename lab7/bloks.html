@@ -18,9 +18,21 @@
             box-shadow: 0 0 10px rgb(2, 0, 0);
             padding: 7px;
             width: 400px;
-            color: rgb(234, 234, 234);
-            
+            color: rgb(234, 234, 234);     
         }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgb(2, 0, 0);
+            background: green;
+            margin: 15px;
+            text-align: center;
+            color: rgb(234, 234, 234);
+            display: inline-block;
+        }
+
     </style>
     <script>
         function addNewBlock() {
@@ -69,15 +81,15 @@
 
         function add10_m80(){
             let main = document.querySelector('main');
+            let contentContainer = document.createElement('br'); // создаем новый контейнер
+        main.appendChild(contentContainer); // добавляем контейнер внутрь <main>
             
-            for (let i = 20; i<=50; i+=2.5) {
-                let newBlock = document.createElement('div')
-                newBlock.style.weight = '40px';
-                newBlock.style.border = '1px solid';
-
-                newBlock.innerHTML = `${i}`;
-
-                main.appendChild(newBlock);
+            for (let i = 10; i>=-80; i-=3) {
+                let newCircle = document.createElement('div');
+                newCircle.classList.add('circle');
+                newCircle.style.border = '6px solid darkgreen';
+                newCircle.innerHTML = i;
+                main.appendChild(newCircle);
             }
         }
 
