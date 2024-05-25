@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .message {
+            border: 5px solid #333;
+            border-radius: 5%;
+            padding: 20px;
+            width: 25%;
+        }
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js'
+            fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(json) {
+                    const euroValue = json.Valute.EUR.Value;
+                    const euroDate = json.Date;
+                    const euroPrevious = json.Valute.EUR.Previous;
+                    const difference = euroValue - euroPrevious > 0 ? "Курс поднялся" : "Курс опустился";
+
+                    const message = `
+                        <div class="message">
+                            <h2>Курс евро</h2>
+                            <p>Текущий курс евро: ${euroValue}</p>
+                            <p>Дата запроса: ${euroDate}</p>
+                            <p>Курс за прошлую дату: ${euroPrevious}</p>
+                            <p>Разница: ${difference}</p>
+                        </div>
+                    `;
+                    
+                    document.getElementById("euro-table").innerHTML = message;
+                    document.querySelector('button').style.display = 'none';
+                })
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+    
+    <main>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="euro-table"></div> 
+        <div id="'detail"></div>
+
+        <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a>
+    </main>
+    <footer>
+        <hr>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>       
