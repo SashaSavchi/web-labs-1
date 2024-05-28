@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .bord{
+            border: 11px double #800000;
+            border-radius: 10px;
+            width: 450px;
+            height: 300px;
+        }
+        .bord::before{
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 300px;
+            /* background-image: url(https://i.pinimg.com/564x/9b/f0/86/9bf086891c27d450557604d34d5e8ea9.jpg); */
+            /* background-image: url(https://i.pinimg.com/564x/8d/1f/8c/8d1f8c1b452ca68db8e22bd003ddd320.jpg); */
+            background-image: url(https://i.pinimg.com/564x/2f/f1/33/2ff1331101a3d3666c25ae466babb4e9.jpg);
+            opacity: 30%;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            border: 3px solid maroon;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 15px;
+            margin-left: 30px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #output{
+            width: 225px;
+            height: 60px;
+            border: 3px solid maroon;
+            border-radius: 10px;
+            margin-left: 170px;
+            top: 260px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            font-size: 30px;
+            line-height: 60px;
+            position: absolute;
+        }
+    </style>
+    <script>
+    function getWeather(index) {
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+        fetch(url)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(json) {
+                let output = document.getElementById('output');
+                console.log(json);
+                let weather = json.hourly.temperature_2m;
+                output.innerText = weather[index] + " °C";
+            });
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+    
+    <main>
+        <div class="bord">
+            <div style="text-align: center; font-size: 30px; color: rgb(0, 0, 0);"> <b>Прогноз погоды Новосибирск на сегодня</b></div>
+            <div style="display: flex; flex-direction: column;">
+            <button onclick="getWeather(8)" >в 8 утра</button>
+            <button onclick="getWeather(12)">в 12 дня</button>
+            <button onclick="getWeather(20)">в 8 вечера</button>
+            </div>
+            <div id="output"></div>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>   
