@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+</head>
+<script>
+ function showAction(){
+            const data = ['15.05.2024','16.05.2024','17.05.2024','20.05.2024',
+                '21.05.2024','22.05.2024','23.05.2024','24.05.2024','27.05.2024','28.05.2024']
+            const value = [156.97,157.88,155.17,145.03,139.54,139.25,134.69,133.34,128.42,129.30]
+            
+            let table = document.getElementById('table');
+            for (let i=0; i < value.length; i++){
+            let tr = document.createElement('tr');
+
+            let td1 = document.createElement('td');
+            td1.innerText = data[i];
+            tr.appendChild(td1);
+
+            let td2 = document.createElement('td');
+            td2.innerText = value[i];
+            tr.appendChild(td2);
+            if (i > 0) {
+            let diff = value[i] - value[i-1];
+            let td3 = document.createElement('td');
+            td3.innerText = diff.toFixed(2);
+            tr.appendChild(td3);
+            } else {
+                let td3 = document.createElement('td');
+                td3.innerText = '-';
+                tr.appendChild(td3);
+            }
+
+            table.appendChild(tr);
+            }
+            let detail = document.getElementById('detail')
+            let max = document.getElementById('max')
+            let min = document.getElementById('min')
+
+            
+            max.innerText = "Максимльное значение: "+Math.max(...value);
+            min.innerText = "Минимальное значение: "+Math.min(...value);
+
+            let sum = 0
+            for(let i = 0; i < value.length; i++){
+                sum += value[i]
+
+
+            }
+            let avarage = sum/value.length
+            avarage = avarage.toFixed(2)
+            detail.innerHTML = "Среднее значение: " + avarage
+            let but = document.getElementById('but');
+        }
+</script>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+    
+    <main>
+        <button onclick="showAction()" id="but">Курс акций Газпром</button>
+        <table id="table" border="1"></table>
+        <div id="detail"></div>
+        <div id="max"></div>
+        <div id="min"></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>   
