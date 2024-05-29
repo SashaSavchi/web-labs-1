@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Расчетно-графическое задание</title>
+    <link rel="stylesheet" href="../mainRGZ.css">
+    <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/4749c6_92d539636500437791cdb69fe3fd3b74%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/4749c6_92d539636500437791cdb69fe3fd3b74%7Emv2.png" type="image/png"/>
+    <link rel="shortcut icon" href="https://static.wixstatic.com/media/4749c6_92d539636500437791cdb69fe3fd3b74%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/4749c6_92d539636500437791cdb69fe3fd3b74%7Emv2.png" type="image/png"/>
+    <script>
+        function getCAD(){
+            const url = "https://www.cbr-xml-daily.ru/daily_json.js";
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                console.log(json);
+                let usernumber = document.getElementById('input').value;
+                let output  = document.getElementById('output');
+                let first = document.getElementById('first').value;
+                let second = document.getElementById('second').value;
+                usernumber =  parseFloat(usernumber);
+                if (usernumber<0 || isNaN(usernumber)){
+                    output.innerText = 'Некоректные данные'
+                }
+                else if(first == "RUB" && second == "RUB"){
+                    output.innerText = usernumber + " ₽"
+                }
+                else if(first == "CAD" && second == "CAD"){
+                    output.innerText = usernumber + " C$"
+                }
+                else if(first == "RUB" && second == "CAD"){
+                    output.innerText = (usernumber / (json.Valute.CAD.Value)).toFixed(2) + " C$";
+                }
+                else (output.innerText = ((json.Valute.CAD.Value) * usernumber).toFixed(2) + " ₽")
+
+            })
+        }
+
+
+
+    </script>
+
+    <style>
+        .mainwindow{
+            border: solid 4px rgb(14, 8, 128);
+            border-radius: 40px;
+            margin: 40px;
+        
+            width: 600px;
+            height: 400px;
+            padding: 10px;
+            background: linear-gradient(to right, rgba(210, 212, 207, 0.3), rgba(128,128,128,0.3));
+            box-shadow: 0px 0px 3px;
+        }
+
+        #name{
+            font-size: 35px;
+            text-align: center;
+            color: #546680;
+            font-family: 'Roboto', sans-serif;
+            text-shadow: 0px 0px 1px;
+            
+        }
+        #first{
+            color: aliceblue;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            font-size: 40px;
+            border-radius: 30px;
+            border: 4px solid rgb(14, 8, 128);
+            background: rgba(19, 58, 110)
+        }
+        #second{
+            color: aliceblue;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            font-size: 40px;
+            border-radius: 30px;
+            border: 4px solid rgb(65, 62, 123);
+            background: rgba(19, 58, 110);
+            font-family: 'Roboto', sans-serif;
+        }
+        #RUBCAD{
+            display: flex;
+            margin-left: 30px;
+            margin-top: 20px;
+
+        }
+        #RUB{
+            margin-left: 40px;
+        }
+        #CAD{
+            margin-left: 80px;
+        }
+
+        #ch{
+            border: 4px solid rgb(14, 8, 128);
+            width: 120px;
+            height: 30px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 245px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: rgb(98, 98, 173);
+            color: aliceblue;
+        }
+        #input{
+            border-radius: 30px;
+            width: 150px;
+            height: 50px;
+            margin-top: 10px;
+            margin-left: 230px;
+            font-size: 30px;
+        }
+        #output{
+            display: flex;
+            border: 1px solid black;
+            border-radius: 30px;
+            width: 400px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+            margin-left: 100px;
+            margin-top: 10px;
+            background: rgba(19, 58, 110);
+            color: rgb(255, 255, 255);
+            font-size: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav style="position: fixed;">
+            <a class='logo' href="news.html"><img src="../AIGENIS.png"></a>
+            <ul class="ull">
+                <li class="lii"><a href="company.html">О компании</a></li>
+                <li class="lii"><a href="news.html">Новости</a></li>
+                <li class="lii"><a href="exchange_rates.html">Курс валют</a></li>
+                <li class="lii"><a href="contacts.html">Контактные данные</a></li>
+                <li class="lii"><a href="video.html">Видео</a></li>
+            </ul>
+        </nav> 
+    </header>
+
+    <main>
+        <div class="mainwindow" style="margin-left: 25%; margin-right: 25%; ">
+            <div id="name">Конвертор валют <br>(Канадский доллар)</div>
+                <div id="RUBCAD">
+                    <div id="RUB">
+                        <select id="first">
+                            <option>RUB</option>
+                            <option>CAD</option>
+                        </select>
+                    </div>
+                    <div id="CAD">
+                        <select id="second">
+                            <option>CAD</option>
+                            <option>RUB</option>
+                        </select>
+                    </div>
+                </div>
+            <input type="number" id="input" min="1" value="0">
+            <div id="ch" onclick="getCAD()">Расчитать</div>
+            <div id="output"></div>
+        </div>
+       
+    </main>
+
+
+
+    <footer>
+        <div>© 2023 ООО ИК "Айгенис"</div>
+        <br>
+        <div>Ограничение ответственности</div>
+        <br>
+        <div>Настоящий сайт предоставлен исключительно в информационном порядке и не является предложением о проведении операций на рынке ценных бумаг, 
+        и, в частности, предложением об их покупке или продаже.</div>
+        <br>
+        <div>Настоящий сайт не является индивидуальной инвестиционной рекомендацией, и финансовые инструменты либо операции, 
+        упомянутые на данном сайте, могут не соответствовать Вашему инвестиционному профилю. Определение соответствия 
+        финансового инструмента либо операции инвестиционным целям, инвестиционному горизонту и толерантности к риску 
+        является задачей инвестора. ООО ИК «Айгенис» не несет ответственности за возможные убытки инвестора в случае 
+        совершения операций, либо инвестирования в финансовые инструменты, упомянутые в данном сайте. Настоящий сайт 
+        содержит информацию, полученную из источников, которые ООО ИК «Айгенис» рассматривает как достоверные. 
+        Тем не менее, ООО ИК «Айгенис», его руководство и сотрудники не могут гарантировать абсолютную точность, 
+        полноту и достоверность такой информации и не несут ответственности за возможные потери клиента в связи с ее использованием.</div>
+        <br>
+        <div>Любая информация с данного сайта не может быть воспроизведена полностью или частично, с нее нельзя делать копии, 
+        выдержки из нее не могут использоваться для каких-либо публикаций без предварительного письменного разрешения ООО ИК «Айгенис».</div>
+        <br>
+        <div>ООО ИК «Айгенис» оказывает финансовые услуги на территории Российской Федерации на основании бессрочных 
+        государственных лицензий профессионального участника рынка ценных бумаг на осуществление брокерской, дилерской 
+        и депозитарной деятельности, а также деятельности по управлению ценными бумагами. Регулирование деятельности
+        ООО ИК «Айгенис» и защиту интересов ее клиентов осуществляет Центральный банк Российской Федерации.</div>
+        <br>
+        <div>Владение ценными бумагами и прочими финансовыми инструментами всегда сопряжено с рисками: стоимость ценных 
+        бумаг и прочих финансовых инструментов может как расти, так и падать. Результаты инвестирования в прошлом 
+        не являются гарантией получения доходов в будущем. В соответствии с законодательством ООО ИК «Айгенис» 
+        не гарантирует и не обещает в будущем доходности вложений, не дает гарантии надежности возможных инвестиций 
+        и стабильности размеров возможных доходов.</div>
+        <br>
+        <div>ООО ИК «Айгенис» вправе по своему усмотрению отказать в заключении Договора без объяснения причин такого отказа.</div>
+    </footer>
+
+</body>
+
+</html>

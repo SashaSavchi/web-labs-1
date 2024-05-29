@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Расчетно-графическое задание</title>
+    <link rel="stylesheet" href="../mainRGZ.css">
+    <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/4749c6_92d539636500437791cdb69fe3fd3b74%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/4749c6_92d539636500437791cdb69fe3fd3b74%7Emv2.png" type="image/png"/>
+    <link rel="shortcut icon" href="https://static.wixstatic.com/media/4749c6_92d539636500437791cdb69fe3fd3b74%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/4749c6_92d539636500437791cdb69fe3fd3b74%7Emv2.png" type="image/png"/>
+    <style>  
+        .news-card {  
+        background-color: #f9f9f9;  
+        border: 1px solid #ddd;  
+        border-radius: 5px;  
+        margin: 10px;  
+        padding: 10px;  
+        }  
+        .news-title {  
+            color: #546680;  
+            font-size: 20px;  
+            font-weight: bold;  
+        }  
+        .news-date {  
+            color: #757575;  
+            font-family: helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;  
+        }  
+        .news-content {  
+            color: #333;  
+        }  
+        .full-news{
+            color: #546680; font-size: 27px;
+        }
+    </style>  
+    <script>  
+        function showFullNews(newsId) {   
+            var fullNews = document.getElementById("full-news");   
+            fullNews.style.display = "block";   
+            document.getElementById("show-button").style.display = "none";   
+            document.getElementById("hide-button").style.display = "block";   
+        }   
+        function hideFullNews() {   
+            var fullNews = document.getElementById("full-news");   
+            fullNews.style.display = "none";    
+            document.getElementById("show-button").style.display = "block";   
+            document.getElementById("hide-button").style.display = "none";   
+        }   
+    </script>  
+</head>
+<body>
+    <header>
+        <nav style="position: fixed;">
+            <a class='logo' href="news.html"><img src="../AIGENIS.png"></a>
+            <ul class="ull">
+                <li class="lii"><a href="company.html">О компании</a></li>
+                <li class="lii"><a href="news.html">Новости</a></li>
+                <li class="lii"><a href="exchange_rates.html">Курс валют</a></li>
+                <li class="lii"><a href="contacts.html">Контактные данные</a></li>
+                <li class="lii"><a href="video.html">Видео</a></li>
+            </ul>
+        </nav> 
+    </header>
+
+    <main>
+        
+        <div>
+            <img style="width: 100%;" src="../city.png">
+        </div>
+            <p style="color: #546680; font-size: 27px; ">Новости комапнии</p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">08.05.2024</span>
+            <p>
+                Настоящим ООО ИК «Айгенис» уведомляет об утверждении обновленной редакции Тарифов на брокерское обслуживание. 
+                Текст документа опубликован по <a href="https://www.aigenis.ru/info5">ссылке</a> и вступает в силу 15.05.2024 г.
+
+            </p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">27.04.2024</span>
+            <p>
+                Настоящим уведомляем о включении 16.04.2024 ООО ИК «Айгенис» Банком России 
+                в Единый реестр инвестиционных советников.
+            </p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">16.04.2024</span>
+            <p>
+                Настоящим ООО ИК «Айгенис» уведомляет об утверждении обновленных редакций 
+                Стратегий доверительного управления. Тексты таких документов опубликованы 
+                по <a href="https://www.aigenis.ru/info10">ссылке</a> и вступают в силу 29.03.2024 г.
+            </p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">29.03.2024</span>
+            <p>
+                Настоящим ООО ИК «Айгенис» уведомляет об утверждении обновленной редакции 
+                Тарифов на брокерское обслуживание. Текст документа опубликован по <a href="https://www.aigenis.ru/info5">ссылке</a> и вступает в силу 02.04.2024 г.
+            </p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">29.03.2024</span>
+            <p>
+                21 февраля в ТПП РФ состоялось <a href="https://org.tpprf.ru/of/council_finprom/post-release/5465008/">совместное заседание</a> Комиссии по цифровым финансовым активам и Экспертного совета по ОРВ законопроектов 
+                Совета ТПП РФ по финансово-промышленной и инвестиционной политике на тему 
+                «Направления развития правового регулирования цифровых финансовых активов (ЦФА) и утилитарных цифровых прав», 
+                в котором принял участие заместитель генерального директора ООО ИК «Айгенис» Михаил Васильев. Представитель инвестиционной 
+                компании остановился на вопросах доступа на рынок, инфраструктуры и привлечения инвесторов.
+            </p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">23.02.2024</span>
+            <p>
+                Вчера произошло значимое событие в отрасли банковского сектора и сферы инвестиций - ежегодная минская конференция 
+                Capital Markets Belarus, организованная <a href="https://cbonds-congress.ru/events/1101/conference/">Cbonds.ru</a>, 
+                где компания Айгенис выступила в качестве генерального партнера.
+                В рамках мероприятия выступили спикеры от двух наших компаний: российский офис представил заместитель 
+                генерального директора Михаил Васильев, из Беларуси – заместитель директора по экономике и инвестициям Вероника 
+                Санкович. Они поделились своей экспертизой в инвестиционных продуктах.
+            </p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">16.02.2024</span>
+            <p>
+                Настоящим ООО ИК «Айгенис» уведомляет об утверждении обновленной редакции Тарифов депозитарного обслуживания. 
+                Текст Тарифов опубликован по <a href="https://www.aigenis.ru/info5">ссылке</a> и вступает в силу 01.03.2024.
+            </p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">14.02.2024</span>
+            <p>
+                23.01.2024  в ЕГРЮЛ  зарегистрировано увеличение уставного капитала ООО ИК "Айгенис" до 527 470 000 рублей.
+            </p>
+
+            <span style="color: #757575; font-family:helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif;padding-left: 25%;">17.01.2024</span>
+            <p>
+                Компания ООО ИК "Айгенис"  представляет <a href="https://www.aigenis.ru/_files/ugd/4749c6_3f1d216b62a84d958b335e705d7944a8.pdf">нашу инвестиционную стратегию  и прогнозы  на  2024 год</a>.
+            </p>
+
+
+
+    </main>
+    <footer>
+        <div>© 2023 ООО ИК "Айгенис"</div>
+        <br>
+        <div>Ограничение ответственности</div>
+        <br>
+        <div>Настоящий сайт предоставлен исключительно в информационном порядке и не является предложением о проведении операций на рынке ценных бумаг, 
+        и, в частности, предложением об их покупке или продаже.</div>
+        <br>
+        <div>Настоящий сайт не является индивидуальной инвестиционной рекомендацией, и финансовые инструменты либо операции, 
+        упомянутые на данном сайте, могут не соответствовать Вашему инвестиционному профилю. Определение соответствия 
+        финансового инструмента либо операции инвестиционным целям, инвестиционному горизонту и толерантности к риску 
+        является задачей инвестора. ООО ИК «Айгенис» не несет ответственности за возможные убытки инвестора в случае 
+        совершения операций, либо инвестирования в финансовые инструменты, упомянутые в данном сайте. Настоящий сайт 
+        содержит информацию, полученную из источников, которые ООО ИК «Айгенис» рассматривает как достоверные. 
+        Тем не менее, ООО ИК «Айгенис», его руководство и сотрудники не могут гарантировать абсолютную точность, 
+        полноту и достоверность такой информации и не несут ответственности за возможные потери клиента в связи с ее использованием.</div>
+        <br>
+        <div>Любая информация с данного сайта не может быть воспроизведена полностью или частично, с нее нельзя делать копии, 
+        выдержки из нее не могут использоваться для каких-либо публикаций без предварительного письменного разрешения ООО ИК «Айгенис».</div>
+        <br>
+        <div>ООО ИК «Айгенис» оказывает финансовые услуги на территории Российской Федерации на основании бессрочных 
+        государственных лицензий профессионального участника рынка ценных бумаг на осуществление брокерской, дилерской 
+        и депозитарной деятельности, а также деятельности по управлению ценными бумагами. Регулирование деятельности
+        ООО ИК «Айгенис» и защиту интересов ее клиентов осуществляет Центральный банк Российской Федерации.</div>
+        <br>
+        <div>Владение ценными бумагами и прочими финансовыми инструментами всегда сопряжено с рисками: стоимость ценных 
+        бумаг и прочих финансовых инструментов может как расти, так и падать. Результаты инвестирования в прошлом 
+        не являются гарантией получения доходов в будущем. В соответствии с законодательством ООО ИК «Айгенис» 
+        не гарантирует и не обещает в будущем доходности вложений, не дает гарантии надежности возможных инвестиций 
+        и стабильности размеров возможных доходов.</div>
+        <br>
+        <div>ООО ИК «Айгенис» вправе по своему усмотрению отказать в заключении Договора без объяснения причин такого отказа.</div>
+    </footer>
+
+</body>
+
+</html>
