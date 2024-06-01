@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="get-days-count.js"></script>
+    <style>
+        .board{
+            background-color: whitesmoke;
+            border: 3px solid;
+            border-radius: 10px;
+            padding: 10px;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <hr>
+    </header>
+    
+    <main>
+        <div class="board">
+            <div>
+                <label>Дата рождения: <input type="date"></label>
+            </div>
+            <div>
+                <button onclick="showDayCount()">Показать число дней</button>
+                <button onclick="clearFields()">Очистить</button>
+            </div>
+    
+            <div id="answer"></div>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>    
