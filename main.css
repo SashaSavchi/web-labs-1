@@ -1,21 +1,25 @@
 body {
-    background-color: lightblue;
+    /* background-color: rgb(129, 115, 119); */
     color: maroon;
     font-family: arial;
     margin: 0px;
+    background-image: url("https://i.pinimg.com/564x/f2/bd/60/f2bd603b285613ec461756d4dd1f65ed.jpg")
+
+    
 }
 
 main {
-    background-color: rgb(100, 202, 236);
-    color: maroon;
+    background-color: #ffffff;
+    color: rgb(75, 95, 60);
     font-family: Arial;
     margin: 30px;
     padding: 10px;
+    padding-block: 30px;
     border-radius: 10px;
 }
 
 footer {
-    background-color: darkblue;
+    background-color: maroon;
     color: white;
     font-family: Arial;
     margin: 0px;
@@ -28,7 +32,7 @@ footer {
 }
 
 header {
-    background-color: darkblue;
+    background-color: maroon;
     color: white;
     font-family: Arial;
     margin: 0px;
@@ -38,7 +42,7 @@ header {
 a {
     color: green;
     text-decoration: none;
-    transition: 1s 3s;
+    transition: 1s 1s;
 }
 
 a:link {
@@ -50,10 +54,10 @@ a:visited {
 }
 
 a:hover {
-    color: red;
+    color: rgb(100, 13, 13);
     text-decoration: underline;
     background-color: pink;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 a:active {
@@ -62,13 +66,17 @@ a:active {
 }
 
 div.menu {
-    border: 8px solid rgba(26, 22, 130, 0.695);
+    border: 8px solid maroon;
     border-radius: 5px;
     width: 300px;
     margin: 0 auto;
+    
 }
 div.menu:hover {
-    background-color: #ffffff30;
-    box-shadow: 0 0 15px #00000030;
-    color: rgb(200, 62, 32);
+    /* background-color: beige; */
+    box-shadow: 0 0 25px #00000030;
+    transform: scale(1.15);
+    transition: 0.55s;
+    color: rgb(246, 53, 10);
+
 }
