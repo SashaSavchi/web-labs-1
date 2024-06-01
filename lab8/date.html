@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="lab8.js"></script>
+    <style>
+        #current-date, #current-date2, #current-date3, #current-date4, #current-date5, #current-date6{
+            margin-top: 10px;
+            color: darkgreen;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <hr>
+    </header>
+    
+    <main>
+        <div id="current-date"></div>
+        <div id="current-date2"></div>
+        <div id="current-date3"></div>
+        <div id="current-date4"></div>
+        <div id="current-date5"></div>
+        <div id="current-date6"></div>
+
+        <div style="border: 3px solid black; width: 350px; padding: 20px; 
+        margin-top: 30px; color: maroon; background-color: whitesmoke; font-size: 20px;">
+            <div id="outputYear"></div>
+            <div id="outputMonth"></div>
+            <div id="outputDay"></div>
+            <div id="outputWeak"></div>
+        </div>
+        <div style="border: 3px solid black; width: 350px; padding: 20px; 
+        margin-top: 30px; color: maroon; background-color: whitesmoke; font-size: 20px;">
+        <input type="number" id="day1" placeholder="Введите день">
+        <input type="number" id="month1"placeholder="Введите месяц">
+        <input type="number" id="year1"placeholder="Введите год">
+        <button onclick="showWeak()">День недели</button>
+        <div id="outputweak2"></div>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>    
