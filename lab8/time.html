@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цуканова Александра Руслановна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="../favicon-16x16.png"> 
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="time.js"></script>
+    <style>
+        #seconds{ 
+            text-align: center; 
+            font-size: 50px; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            z-index: 2;
+        } 
+        #clock{ 
+            width: 2px; 
+            height: 90px; 
+            background-color: black; 
+            position: absolute; 
+            top: 45%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            z-index: 1;
+        } 
+        img{ 
+            width: 400px; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body onload="showTime()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <div style="text-align: right; font-size: xx-large;" id="time"><b>00:00:00</b></div>
+        <hr>
+    </header>
+    
+    <main>
+        <div id="seconds"></div>
+        <div id="clock"></div>
+        <div><img src="cfbl.jpg"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy;Александра Цуканова, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>    
